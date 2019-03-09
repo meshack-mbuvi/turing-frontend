@@ -2,10 +2,11 @@ import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // components
-import Home from "./home";
+import HomePage from "./homepage";
 import Navbar from "./navbar";
 import Login from './auth/login';
 import SignUp from './auth/signup'
+import Home from './home'
 
 export class Index extends React.Component {
     public render() {
@@ -13,7 +14,8 @@ export class Index extends React.Component {
             <Router>
                 <div>
                     <Navbar />
-                    <Route path="/" exact={true} component={Home} />
+                    <Route path="/" exact={ true } component={ HomePage } />
+                    <Route path='/home' component={Home}/>
                     <Route path="/login" component={Login} />
                     <Route path='/signup' component={SignUp} />
                 </div>

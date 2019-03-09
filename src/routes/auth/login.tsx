@@ -1,9 +1,9 @@
 import * as React from "react";
 
 // components
-import { Form } from '../../components/form';
-import Label from '../../components/label'
-import { Input } from 'src/components/input';
+import { Form } from '../../components/molecules/form';
+import Label from '../../components/atoms/label'
+import { Input } from 'src/components/atoms/input';
 export class Login extends React.Component {
 
     public handleSignup = (e: any) => {

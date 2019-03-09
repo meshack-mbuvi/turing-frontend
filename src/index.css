@@ -2,6 +2,7 @@ body {
     margin: 2px;
     padding: 0;
     font-family: sans-serif;
+    font-size: 24px;
 }
 
 .content {
@@ -24,9 +25,10 @@ body {
     height: 36px;
 }
 
-.nav-link a:hover {
-    color: red !important;
+.nav-link a:hover,
+a:hover {
     text-decoration: none;
+    color: red
 }
 
 .navbar-brand {
@@ -57,17 +59,128 @@ body {
     color: #fff;
     display: -moz-box;
     display: -ms-flexbox;
-    display: flex;
     font-size: 18px;
     font-weight: bold;
     line-height: 24px;
     margin: 48px auto;
     margin-left: 22%;
     position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    float: none;
 }
 
-.bg {
+.bg-image {
     height: 760.5px;
-    background-image: url("./static/images/background3.png");
+    background-image: url("./static/images/background0.jpg");
     background-size: cover;
+}
+
+.background {
+    font-family: PlayfairDisplay;
+    font-size: 48px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #fff !important;
+}
+
+.Vera-Bradley {
+    width: 236px;
+    height: 18px;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    color: #2e2e2e;
+    margin-top: 24px;
+}
+
+.Carry-the-day-in-sty {
+    width: 236px;
+    font-family: OpenSans;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #2e2e2e;
+}
+
+.Call-to-Action {
+    width: 10rem !important;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    font-size: 24px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #f62f5e;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+    margin: 10px
+}
+
+.bg,
+.bg:hover {
+    border-radius: 12px;
+    background-color: #f62f5e;
+    color: #fff;
+    padding: 10px 20px 10px 20px;
+}
+
+.Registration-is-on {
+    height: 12px;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2e2e2e;
+}
+
+.Let-the-Game-begin {
+    font-family: PlayfairDisplay;
+    font-size: 48px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #2e2e2e;
+}
+
+.Bitmap {
+    width: 100%;
+    background-size: cover;
+}
+
+.col-sm-12>.bg-image {
+    height: 100%
+}
+
+.card {
+    box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.card-img-top {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    margin: 40px;
+    width: 80% !important;
 }
