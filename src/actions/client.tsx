@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const client = axios.create({
-    baseURL: 'https://backendapi.turing.com',
+    baseURL: process.env.REACT_APP_API_URL,
 });
 
 client.interceptors.response.use(

@@ -1,4 +1,4 @@
-import { SIGN_UP } from './types';
+import { SIGN_UP,LOGIN } from './types';
 import client from './client';
 
 /**
@@ -12,7 +12,6 @@ export const SignUpAction = (userData: any) => async (dispatch: any) => {
         const res = await client.post(`/customers`, { ...userData });
         return dispatch(SignUp(res.data))
     } catch (error) {
-        console.log("error ", error.response)
         return error
     }
 };
@@ -28,3 +27,32 @@ export const SignUp = (payload: any) => {
         payload,
     };
 };
+
+/**
+ *
+ * @param userData
+ * @returns dispatch
+ */
+export const LoginAction = (userData: any) => async (dispatch: any) => {
+    try {
+
+        const res = await client.post(`/customers/login`, { ...userData });
+        localStorage.setItem('accessToken',res.data.accessToken)
+        return dispatch(Login(res.data.customer))
+    } catch (error) {
+        return error
+    }
+};
+
+/**
+ *
+ * @param payload
+ * @returns action object
+ */
+export const Login = (payload: any) => {
+    return {
+        type: LOGIN,
+        payload,
+    };
+};
+

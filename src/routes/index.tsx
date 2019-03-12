@@ -2,11 +2,13 @@ import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // components
-import HomePage from "./homepage";
+import HomePage from "./home";
 import Navbar from "./navbar";
 import Login from './auth/login';
 import SignUp from './auth/signup'
-import Home from './home'
+import AllCategories from './all.categories'
+import AddToCart from 'src/components/add.to.cart';
+import ShoppingCart from '../components/shopping.cart';
 
 export class Index extends React.Component {
     public render() {
@@ -14,10 +16,12 @@ export class Index extends React.Component {
             <Router>
                 <div>
                     <Navbar />
-                    <Route path="/" exact={ true } component={ HomePage } />
-                    <Route path='/home' component={Home}/>
+                    <Route path="/" exact={true} component={HomePage} />
+                    <Route path='/allcategories' component={AllCategories} />
                     <Route path="/login" component={Login} />
                     <Route path='/signup' component={SignUp} />
+                    <Route path='/addtocart/:id' component={AddToCart} />
+                    <Route path='/shoppingcart' component={ShoppingCart} />
                 </div>
             </Router>
         );
