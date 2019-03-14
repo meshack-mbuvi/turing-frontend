@@ -9,6 +9,8 @@ import SignUp from './auth/signup'
 import AllCategories from './all.categories'
 import AddToCart from 'src/components/add.to.cart';
 import ShoppingCart from '../components/shopping.cart';
+import ProductDetails from './product.details';
+import Checkout from './checkout';
 
 export class Index extends React.Component {
     public render() {
@@ -22,6 +24,8 @@ export class Index extends React.Component {
                     <Route path='/signup' component={SignUp} />
                     <Route path='/addtocart/:id' component={AddToCart} />
                     <Route path='/shoppingcart' component={ShoppingCart} />
+                    <Route path='/products/:id' component={ProductDetails} />
+                    <Route path='/checkout' component={Checkout} />
                 </div>
             </Router>
         );
