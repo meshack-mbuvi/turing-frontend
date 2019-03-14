@@ -5,6 +5,8 @@ import { AllProducts } from 'src/actions/product.action';
 
 import background from "../images/gamebegin.png"
 
+const BASE_IMAGE_URL = `https://raw.githubusercontent.com/zandoan/turing-frontend/master/Images/product_images`
+
 interface IProps {
     history?: any;
     products?: any;
@@ -17,6 +19,12 @@ export class Home extends React.Component<IProps> {
     }
 
     public render() {
+        const { products } = this.props
+        const productItem = products.rows
+            ? products.rows
+                .sort(() => 0.5 - Math.random())
+                .slice(0, 1) : ''
+
         return (
             <div className="container-fluid">
                 <div className='row bg-image'>
@@ -35,27 +43,32 @@ export class Home extends React.Component<IProps> {
                     </div>
                     <div className="col-sm-12 col-md-6" />
                 </div>
-                <div className="row m-auto">
-                    <div className="col-sm-12 col-md-5" />
-                    <div className="col-sm-12 col-md-7 m-auto">
-                        <div className="row">
-                            <div className="Vera-Bradley col-sm-12 col-md-12 mt-4">
-                                Vera Bradley
+                {productItem ? productItem.map((item: any, index: any) => {
+                    return <div className="row m-auto" key={index}>
+
+                        <div className="col-sm-12 col-md-5" >
+                            <img src={`${BASE_IMAGE_URL}/${item.thumbnail}`} className='randomItemThumbnail mr-2 mt-4' />
+                        </div>
+                        <div className="col-sm-12 col-md-7 m-auto">
+                            <div className="row">
+                                <div className="Vera-Bradley col-sm-12 col-md-12 mt-4">
+                                    {item.name}
                                 </div>
-                            <div className="Carry-the-day-in-sty col-sm-12 col-md-12 mt-4 mb-4">Carry the day in style with this extra-large tote crafted in our chic B.B. Collection textured PVC. Featuring colorful faux leather trim, this tote offers a roomy interior plus just enough perfectly placed pockets to keep smaller items organized and easy to find.
-                            </div>
-                            <div className="col-sm-12 col-md-12">
-                                <Link to='/' className="bg ">Shop now</Link>
+                                <div className="Carry-the-day-in-sty col-sm-12 col-md-12 mt-4 mb-4">{item.description}
+                                </div>
+                                <div className="col-sm-12 col-md-12">
+                                    <Link to='/allcategories' className="bg ">Shop now</Link>
+                                </div>
+
                             </div>
 
                         </div>
-
                     </div>
-                    To be updated soon
-              </div>
+                }) : ''}
+
                 <div className="row">
                     <div className="col-sm-4" />
-                    <div className="col-sm-12 col-md-7">
+                    <div className="col-sm-12 col-md-12">
                         <div className="row">
 
                             <div className="col-md-12 mt-4">
@@ -71,8 +84,7 @@ export class Home extends React.Component<IProps> {
                         </div>
 
                     </div>
-                    To be updated soon
-              </div>
+                </div>
 
             </div>
         );

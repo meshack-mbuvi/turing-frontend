@@ -7,6 +7,8 @@ import { GetDepartments } from '../actions/departments';
 
 const defaultUrl = `/products`;
 
+const BASE_IMAGE_URL = `https://raw.githubusercontent.com/zandoan/turing-frontend/master/Images/product_images`
+
 interface IProps {
     history?: any;
     products?: any;
@@ -19,7 +21,7 @@ export class AllCategories extends React.Component<IProps> {
         currentPage: 1,
         lastPage: -1
     };
-    public componentWillMount() {
+    public componentDidMount() {
         const { dispatch } = this.props;
         dispatch(AllProducts())
         dispatch(GetDepartments())
@@ -32,6 +34,12 @@ export class AllCategories extends React.Component<IProps> {
         const { history } = this.props;
         history.push(url);
     };
+
+    public quickView = (e: any) => {
+        const url = `/products/${e.target.id}`;
+        const { history } = this.props;
+        return history.push(url);
+    }
 
     public getByCategory = (e: any) => {
         const catId = e.target.id
@@ -140,8 +148,6 @@ export class AllCategories extends React.Component<IProps> {
         const randomItem = products.rows
             ? products.rows[Math.floor(Math.random() * products.rows.length)] : ''
 
-        const randomItemThumbnail = `static/product_images/${randomItem.thumbnail}`
-
         return (
             <div className="container-fluid">
                 <div className="row mt-1">
@@ -178,7 +184,8 @@ export class AllCategories extends React.Component<IProps> {
                 {randomItem ? (
                     <div className="row mt-1">
                         <div className="col-sm-12 col-md-4 d-flex justify-content-center">
-                            <img src={randomItemThumbnail} className='randomItemThumbnail mr-2 mt-4' /></div>
+                            <img src={`${BASE_IMAGE_URL}/${randomItem.thumbnail}`} className='randomItemThumbnail mr-2 mt-4' />
+                        </div>
                         <div className="col-sm-12 col-md-8">
                             <h3 className="mt-4">{randomItem.name} <span className="text-danger">£{randomItem.price}</span></h3>
                             <p className="text-muted">{randomItem.description}</p>
@@ -191,7 +198,7 @@ export class AllCategories extends React.Component<IProps> {
 
                 <div className="row mt-1">
                     <div className="col-sm-12 col-md-12">{products.rows && this.renderPaginationButtons()}</div>
-                    <div className="col-sm-12 col-md-4" />
+                    <div className="col-sm-12 col-md-4" >This part is under development</div>
                     <div className="col-sm-12 col-md-8">
                         <div className="row mt-1">
                             {products.rows
@@ -199,7 +206,7 @@ export class AllCategories extends React.Component<IProps> {
                                     .sort(() => 0.5 - Math.random())
                                     .slice(0, 6)
                                     .map((item: any) => {
-                                        const thumbnail = `static/product_images/${item.thumbnail}`;
+                                        const thumbnail = `${BASE_IMAGE_URL}/${item.thumbnail}`;
 
                                         return (
                                             <ProductItem
@@ -209,6 +216,7 @@ export class AllCategories extends React.Component<IProps> {
                                                 name={item.name}
                                                 buyNow={this.buyNow}
                                                 price={item.price}
+                                                quickView={this.quickView}
                                             />
                                         );
                                     })
