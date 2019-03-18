@@ -21,8 +21,8 @@ Enzyme - A JavaScript Testing utility for React
 - [x] Support paging if we have to many items
 - [x] Users can register/login using website custom forms
 - [x] Items are displayed properly based on the selected department and category
+- [x] Users can see item details by selecting a specific item
 - [ ] Users can search items through search box
-- [ ] Users can see item details by selecting a specific item
 - [ ] Users can update personal profiles with shipping addresses, and other info
 - [ ] Users can checkout with 3rd party payment gateways: Paypal, Stripe…
 - [ ] Users will get confirmations over emails about their orders

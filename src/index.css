@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: sans-serif;
     font-size: 24px;
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
 }
 
 .content {
@@ -199,8 +199,6 @@ a:hover {
 .card-img-top {
     border-top-left-radius: calc(0.25rem - 1px);
     border-top-right-radius: calc(0.25rem - 1px);
-    /* margin: 40px; */
-    /* width: 80% !important; */
 }
 
 .fa-shopping-cart {
@@ -250,4 +248,114 @@ a:hover {
 .randomItemThumbnail {
     width: 80%;
     height: 80%;
+}
+
+.btn-circle {
+    width: 20px;
+    height: 20px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    margin-right: 8px;
+    border: 0.1px solid #B4B4B4
+}
+
+.btn-rec {
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    margin-right: 16px;
+    border: 0.5px solid #B4B4B4
+}
+
+.White {
+    background-color: white;
+}
+
+.Red {
+    background-color: red;
+}
+
+.Black {
+    background-color: black;
+}
+
+.Orange {
+    background-color: orange;
+}
+
+.Yellow {
+    background-color: yellow;
+}
+
+.Green {
+    background-color: green;
+}
+
+.Blue {
+    background-color: blue;
+}
+
+.Indigo {
+    background-color: indigo;
+}
+
+.Purple {
+    background-color: purple;
+}
+
+.btn-rec:focus {
+    background-color: red;
+    outline: 0 !important;
+}
+
+.overlay {
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+}
+
+.hideOverlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.btn-round {
+    border-radius: 50%;
+    width: 40px;
+    background-color: #b4b4b4;
+    margin: 1px;
+}
+
+#qty {
+    width: 60px !important;
+    margin: 0;
+}
+
+.black {
+    color: black;
+}
+
+.item-image {
+    width: 200px;
+    height: 300px;
+}
+
+.thumbnail {
+    border: 1px solid green;
+    width: 80px;
+    height: 80px;
+    box-shadow: 15px #;
+}
+
+button:focus,
+.btn:focus {
+    outline: 0 !important;
 }

@@ -21,7 +21,7 @@ interface IState {
 export class AddToCart extends React.Component<IProps, IState> {
     public state = { error: '', Color: '', Size: '' }
 
-    public componentWillMount() {
+    public componentDidMount() {
         const { location, dispatch } = this.props;
         const productId = location.pathname.split('/')[2]
         dispatch(getProduct(productId));
