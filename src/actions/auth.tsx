@@ -1,4 +1,4 @@
-import { SIGN_UP,LOGIN } from './types';
+import { SIGN_UP, LOGIN } from './types';
 import client from './client';
 
 /**
@@ -35,9 +35,9 @@ export const SignUp = (payload: any) => {
  */
 export const LoginAction = (userData: any) => async (dispatch: any) => {
     try {
-
         const res = await client.post(`/customers/login`, { ...userData });
-        localStorage.setItem('accessToken',res.data.accessToken)
+        console.log("log ", res)
+        localStorage.setItem('accessToken', res.data.accessToken)
         return dispatch(Login(res.data.customer))
     } catch (error) {
         return error
@@ -55,4 +55,3 @@ export const Login = (payload: any) => {
         payload,
     };
 };
-

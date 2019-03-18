@@ -36,12 +36,13 @@ Enzyme - A JavaScript Testing utility for React
 
 - Clone this repository
 - `cd turing-frondend`
-- `npm i`
+- `git checkout develop`
+- `npm install`
 - `npm start`
   Runs the app in the development mode.
   Open http://localhost:3000 to view it in the browser.
 
-Access the live application [here](https://turing-frontent.herokuapp.com/)
+NB: Refresh the page after login(I will be fixing this issue)
 
 ## Developer
 

@@ -1,7 +1,7 @@
 import * as React from "react";
 
 interface IProps {
-  type?: string;
+  type?: any;
   value?: string;
   className?: string;
   id?: string;
@@ -10,6 +10,7 @@ interface IProps {
   onClick?: any;
   ref?: any;
 }
+
 export const Button: React.SFC<IProps> = ({
   type = "button",
   value,
@@ -18,19 +19,19 @@ export const Button: React.SFC<IProps> = ({
   dataToggle = "",
   dataTarget = "",
   onClick,
-  ref
+  ref,
 }) => {
   return (
     <button
-      type={ type }
-      className={ className }
-      id={ id }
-      data-toggle={ dataToggle }
-      data-target={ dataTarget }
-      onClick={ onClick }
-      ref={ ref }
+      type={type}
+      className={className}
+      id={id}
+      data-toggle={dataToggle}
+      data-target={dataTarget}
+      onClick={onClick}
+      ref={ref}
     >
-      { value }
+      {value}
     </button>
   );
 };

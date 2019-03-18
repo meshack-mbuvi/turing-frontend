@@ -6,7 +6,7 @@ import { Form } from "../../components/molecules/form";
 import { Input } from "../../components/atoms/input";
 import { Button } from '../../components/atoms/button';
 
-import { SignUpAction } from 'src/actions/auth';
+import { SignUpAction } from '../../actions/auth';
 
 interface IProps {
     dispatch?: any;

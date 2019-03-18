@@ -11,7 +11,6 @@ interface IProps {
 export class Checkout extends React.Component<IProps> {
 
     public render() {
-
         return (
             <div className="container">
                 <div className="row">
